@@ -1,26 +1,28 @@
-﻿class Task3
+﻿// See https://aka.ms/new-console-template for more information
+// Row 0: Even numbers
+// Row 1: Odd numbers
+int[][] numberMatrix = new int[][]
 {
-    static void Main(string[] args)
-    {
-        int[] numbers = { 3, 7, 12, 19, 21, 25, 30 };
-        System.Console.WriteLine("Enter a number: ");
-        int numberToSearch = int.Parse(Console.ReadLine());
-        // System.Console.WriteLine(1+numberToSearch);
-        int index = 0;
-        bool found = false;
-        foreach (var number in numbers)
-        {
-            if (number == numberToSearch)
-            {
-                System.Console.WriteLine( $"Number found at position {index}!" );
-                found = true;
-                break;
-            }
-            index++;
-        }
-        if (!found)
-        {
-            System.Console.WriteLine( "Number not found in the list." );
-        }
-    }
+    new int[] { 2, 4, 6, 8, 10 },
+    new int[] { 1, 3, 5, 7, 9 }
+};
+
+Console.WriteLine("The number matrix has been initialized.");
+
+{   //digit 1
+    int digit1 = numberMatrix[1][3];
+Console.WriteLine("Output");
+    Console.WriteLine($"Digit 1 is: {digit1}");
+    
+    //digit 2 
+    int digit2 = numberMatrix[0][0];
+    Console.WriteLine($"Digit 2 is: {digit2}");
+
+    //digit 3
+    int digit3 = numberMatrix[1][4];
+    Console.WriteLine($"Digit 3 is: {digit3}");
+
+    //combining the digits using the key
+    string thekey = string.Format("{0}{1}{2}", digit1, digit2, digit3);
+    Console.WriteLine($"the password is: {thekey}");
 }
